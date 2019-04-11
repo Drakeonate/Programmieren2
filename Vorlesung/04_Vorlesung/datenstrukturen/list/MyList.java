@@ -1,6 +1,7 @@
 package datenstrukturen.list;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -9,33 +10,40 @@ public class MyList {
 
 	//strg + leertaste
 	public static void main(String[] args) {
-//		ArrayList<HumanEgg> humaneggs = new ArrayList<>();
-//		LinkedList<HumanEgg> humaneggs = new LinkedList<>();
-		HashSet<HumanEgg> humaneggs = new HashSet<>();
-		
+		HashSet<String> data = new HashSet<>();
+//		LinkedList<String> data = new LinkedList<>();
+//		ArrayList<String> data = new ArrayList<>(1000000);
+		int max = 100000;
+		HashMap<Integer, String> h;
+
+		//HashSet add 40-75 bei 100.000
+		//HashSet add 230-250 bei 1.000.000
+		//LinkedList add 1200 bei 1.000.000
+		//LinkedList add 30-40 bei 100.000
+		//ArrayList add 30-40 bei 100.000
+		//ArrayList add 80-120 bei 1.000.000
 		
 		//hol dir die aktuelle Zeit
 		long startTime = System.currentTimeMillis();
-		
-		humaneggs.add(new HumanEgg("schwarz", 10.0f, 3.0f, "gepunktet"));
-		humaneggs.add(new HumanEgg("rot", 5.0f, 7.0f, "karo"));
-		humaneggs.add(new HumanEgg("blau", 240.0f, 100.0f, "gestreift"));
 
+		for(int i = 0; i < max; i++) {
+			data.add("Bla " + i);
+		}
+		
 		//hol dir die aktuelle Zeit
 		long endTime = System.currentTimeMillis();
 		
 		System.out.println("Zeit: " + (endTime - startTime));
 		
 		//for(Datentyp variablenNameVomElement : liste)
-		for(HumanEgg e : humaneggs) {
-			System.out.println(e);
+
+		startTime = System.currentTimeMillis();
+		for(int i = 0; i < max; i++) {
+			data.remove("Bla " + i);
 		}
+		endTime = System.currentTimeMillis();
+		System.out.println("Zeit: " + (endTime - startTime));
 		
-		Iterator<HumanEgg> it = humaneggs.iterator();
-		
-		while(it.hasNext()) {
-			System.out.println(it.next());
-		}
 		
 		//size() = Anzahl der Elemente in der ArrayListe
 //		for(int i = 0; i < humaneggs.size(); i++) {
