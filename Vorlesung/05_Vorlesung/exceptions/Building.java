@@ -8,18 +8,27 @@ public class Building {
 	private String material;
 	private boolean isFlying;
 	private double size;
+	private boolean isWaterAvailable;
+	private boolean isCoffeeMaschineWorking;
 	
 	
-	public void rotate() { //boden zu nah exception
-		
+	public void rotate() throws NotEnoughDistanceToGroundException { //boden zu nah exception
+		if(!isFlying) {
+			throw new NotEnoughDistanceToGroundException("The building is not flying, so it cannot rotate");
+		}
 	}
 	
 	public void fly() {
 		
 	}
 	
-	public void cookCoffee() { //wasser oder kaffeepulver fehlt exception
-		
+	public void cookCoffee() throws NoWaterException, CoffeeMaschineIsDeadException { //wasser oder kaffeepulver fehlt exception
+		if(!isCoffeeMaschineWorking) {
+			throw new CoffeeMaschineIsDeadException("You should build a new building");
+		}
+		if(!isWaterAvailable) {
+			throw new NoWaterException("Send a minion to buy water");
+		}
 	}
 	
 	public void talk() {
@@ -72,6 +81,22 @@ public class Building {
 
 	public void setSize(double size) {
 		this.size = size;
+	}
+
+	public boolean isWaterAvailable() {
+		return isWaterAvailable;
+	}
+
+	public void setWaterAvailable(boolean isWaterAvailable) {
+		this.isWaterAvailable = isWaterAvailable;
+	}
+
+	public boolean isCoffeeMaschineWorking() {
+		return isCoffeeMaschineWorking;
+	}
+
+	public void setCoffeeMaschineWorking(boolean isCoffeeMaschineWorking) {
+		this.isCoffeeMaschineWorking = isCoffeeMaschineWorking;
 	}
 	
 	
