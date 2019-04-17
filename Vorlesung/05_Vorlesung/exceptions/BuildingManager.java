@@ -16,15 +16,15 @@ public class BuildingManager {
 			
 		}
 		
-		building.setCoffeeMaschineWorking(true);
+		building.setCoffeeMaschineWorking(false);
 		building.setWaterAvailable(false);
 		
 		try {
 			building.cookCoffee();
-		} catch (NoWaterException e) {
+		} catch (NoWaterException | CoffeeMaschineIsDeadException e) {
 			e.printStackTrace();
-		} catch (CoffeeMaschineIsDeadException e) {
-			e.printStackTrace();
+//		} catch (CoffeeMaschineIsDeadException e) {
+//			e.printStackTrace();
 		}
 		
 	}
