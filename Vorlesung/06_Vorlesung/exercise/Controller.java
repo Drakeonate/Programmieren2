@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 
-import fileIO.service.IOService;
+import serviceClass.IOService;
+
 
 public class Controller implements Observer {
 	
@@ -136,7 +137,7 @@ public class Controller implements Observer {
 		//TODO alle Threads beenden
 		
 		fileChecker.stopChecker();
-		IOService.write(FILE_CHECKER_DATA_FILE, fileChecker.getFile().getAbsolutePath() + ";" + fileChecker.getTimestamp(), false);
+		IOService.write(fileChecker.getFile().getAbsolutePath() + ";" + fileChecker.getTimestamp(), FILE_CHECKER_DATA_FILE, false);
 		
 	}
 }

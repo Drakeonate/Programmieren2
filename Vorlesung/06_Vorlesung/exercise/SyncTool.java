@@ -2,7 +2,8 @@ package exercise;
 
 import java.util.Scanner;
 
-import fileIO.service.IOService;
+import serviceClass.IOService;
+
 
 public class SyncTool {
 
@@ -33,7 +34,7 @@ public class SyncTool {
 				controller.stop();
 			}
 			else {
-				IOService.write("Message.txt", msg);
+				IOService.write(msg, "Message.txt", true);
 			}
 		}	
 		
