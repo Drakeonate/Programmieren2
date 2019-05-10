@@ -28,7 +28,7 @@ public class Controller {
 	private String userName = "Unknown";
 	private ClientGUI view;
 	
-	//TODO deklariere einen Writer deiner Wahl!
+	//TODO 1 deklariere einen Writer deiner Wahl!
 
 	public Controller(String serverIP, int port) {
 		this.port = port;
@@ -47,17 +47,17 @@ public class Controller {
 
 				view.clearField();
 				
-				//TODO schreibe den msg-String übers Netzwerk
+				//TODO 6 schreibe den msg-String übers Netzwerk
 
 			}
 		});
 
-		//TODO erstell das Socket und einen Writer mit dem man über das Socket schreiben kann
-
+		//TODO 2 erstell das Socket und einen Writer mit dem man über das Socket schreiben kann
+		//TODO (3 teste Connection, wenn ihr unsicher seid)
 		
 		clientReceiveThread = new ClientReceiveThread(socket, this);
 
-		//TODO starte den ClientReceiveThread
+		//TODO 4 starte den ClientReceiveThread
 
 		getUserName();
 
@@ -68,7 +68,7 @@ public class Controller {
 		//frag den User nach dem Namen
 		userName = JOptionPane.showInputDialog("Bitte gib deinen Namen ein:");
 		
-		//TODO schreibe den Namen übers Netzwerk
+		//TODO 3 schreibe den Namen übers Netzwerk
 
 		//setze den usernamen als Titel in der View
 		view.setName(userName);

@@ -16,7 +16,7 @@ public class ClientReceiveThread {
 		isRunning = true;
 	}
 
-	//TODO überschreibe die run()-Methode 
+	//TODO 5 überschreibe die run()-Methode 
 	//TODO und empfange dort Nachrichten mit Hilfe des Reaeders deiner Wahl
 	//TODO wenn du eine Nachricht bekommen hast, übermittel dem Controller diese Nachricht, damit er diese an die GUI weitergeben kann. 
 	//Das machst du mit: controller.setMessage("Hier sollte die empfangene Message stehen");
